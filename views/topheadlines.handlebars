@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News Today</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Adjust the styles as needed */
+    html,
+    body {
+      height: 100%;
+    }
+    .container-fluid {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    #news-container {
+      height: calc(100% - 220px);
+      overflow-y: scroll;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .content {
+      flex: 1;
+    }
+  </style>
+  <script src="scripts/topheadlines.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Top row -->
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col">
+          <h1>Welcome</h1>
+        </div>
+        <div class="col">
+          <!-- Menu goes here -->
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="/topheadlines">topheadlines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mediastack">mediastack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">about</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Second row -->
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <h4>Top Headlines</h4>     
+    </div>
+</div>
+
+<hr>
+    <!-- Third row -->
+    <div class="container">
+      <!--span class="label label-success" id="sucess_label">Success Label</span-->
+      <div class="row" id="news-container">
+         {{#each headlines}}
+           <div>                                
+            <img src="https://ipdata.co/flags/{{this.country}}.png" alt="{{this.country}} Flag" title="{{this.longName}}">
+            <button type="button" class="btn btn-success" onClick="expandNews('{{this.country}}')">  Expand</button>
+            <button type="button" class="btn btn-secondary" onClick="collapseNews('{{this.country}}')">Collapse</button>
+            <br><hr>
+            <div  class="{{this.country}}-class-sel" style="display:none;">
+            {{#each this.articles}}
+              <p>     
+                <a href="{{this.url}}" target="_blank">                  
+                  {{this.title}}
+                </a>          
+                <br>{{this.description}}<br>
+                {{this.content}}
+                {{#if this.urlToImage }}
+                  <br><img src="{{this.urlToImage}}" width="200px" height="auto"><br> 
+                {{/if}}
+                <b>published</b> {{this.publishedAt}}<br>
+              </p><hr>
+            {{/each}}            
+            </div>
+           </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- Fourth row (sticky footer) -->
+    <footer class="container-fluid bg-light">
+      <div class="row">
+        <div class="col">
+          <p>version: {{version}} last update: {{lastSuccessful}}</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

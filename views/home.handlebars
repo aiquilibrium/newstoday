@@ -1,0 +1,32 @@
+          <div class="container">
+            
+            {{#if message}}
+                <div style="text: align:center" class="alert alert-{{message.type}}">
+                <button type="button" name="close" data-dismiss="alert">&times;</button>
+                <strong>{{message.intro}}</strong> {{message.message}}
+                </div>
+            {{/if}}
+
+            <div class="row">
+               <div class="col">
+                  <div class="form_cnt form-signin">
+                    <form method="POST" action="/subscribe">
+                      <div>
+                        <img class="box" src="/images/umbrellas.jpg" alt="" width="100%" height="150px">
+                      </div>
+                      <div>
+                        <h2 class="h3 mb-3 fw-normal">Please sign up</h2>
+                      </div>
+                      <div>
+                        <input type="text" class="form-control firstname" placeholder="First Name" name="first_name" required autofocus>
+                        <input type="text" class="form-control lastname" name="lastname" placeholder="Last name" required>
+                        <input type="email" class="form-control email" name="email" placeholder="email" requiered>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>                        
+                      </div>
+                      <div>
+                        <p class="mt-5 mb-3 text-muted brand">© vortexweb developer, 05/2023</p>
+                      </div>
+                    </form>                  
+              </div>
+            </div>
+          </div>

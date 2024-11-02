@@ -1,0 +1,33 @@
+{
+  "name": "vertexweb_developer-newsletter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "vertexweb developer",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.18.1",
+    "express-toastr": "^1.1.0",
+    "express3-handlebars": "^0.5.2",
+    "formidable": "^2.1.1",
+    "handlebars": "^4.7.8",
+    "har-validator": "^5.1.5",
+    "lodash.debounce": "^4.0.8",
+    "newsapi": "^2.4.1",
+    "node-cache": "^5.1.2",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7",
+    "pg": "^8.13.1",
+    "request": "^2.88.2",
+    "uglify-js": "^3.17.4"
+  }
+}

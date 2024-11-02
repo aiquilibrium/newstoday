@@ -1,0 +1,105 @@
+<style>
+  .flex-container { 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items:  flex-start; 
+    background-color: #bbdefb; 
+    height: 100%; 
+    padding: 15px; 
+    gap: 5px;
+    flex: 1 1 1;    
+  } 
+  
+  .flex-container > div 
+  { 
+    background: #ffecb3; 
+    border: 3px solid #ffcc80;
+    border-radius: 5px; padding: 8px; 
+    } 
+    
+footer { 
+    position:absolute; width:100%;
+    bottom:0px; text-align: center; 
+} 
+
+select.form-control{display:inline-block}
+
+</style>
+
+<div class="flex-container">
+  
+<form action="/top_headlines">
+<h3>Top Headlines</h3>
+    <!--div class="categories">
+    <h3>Categories</h3>
+    <ul class="list-group">
+    {{#each categories}}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value={{value}} aria-label="..." >
+      {{title}}
+      <!--img src="/images/{{icon}}.png" alt="{{title}}" width="32" height="32" /-->
+    <!--/li>
+    {{/each}}
+    </ul>  
+    </div>
+
+    <div class="languages">
+  <h3>Languages</h3>
+  <ul class="list-group">
+    {{#each languages}}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value={{value}} aria-label="..." id="chk-box-{{language_code}}">
+      {{language}}
+    </li>
+    {{/each}}
+  </ul>
+    </div>
+    
+    <div class="countries">
+    <h3>Countries</h3>
+    <ul class="list-group">
+    {{#each countries}}
+      <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value={{value}} aria-label="..." id="chk-box-{{country_code}}">      
+      {{country}}
+      </li>
+    {{/each}}
+    </ul>
+    </div-->
+
+  <div class="form-group">
+    <label for="selCategory">Category</label>
+    <select name="category" class="form-control" id="selCategory">
+      {{#each categories}}
+      <option value="{{value}}">{{title}}</option>    
+      {{/each}}  
+    </select>
+  </div>
+
+    <div class="form-group">
+    <label for="selLang">Language</label>
+    <select name="language" class="form-control" id="selLang">
+      {{#each languages}}
+      <option value="langCode">{{language}}</option>    
+      {{/each}} 
+    </select>
+  </div>
+
+    <div class="form-group">
+    <label for="selCountry">Country</label>
+    <select name="country" class="form-control" id="selCountry">
+      {{#each countries}}
+      <option value="country_code">{{country}}</option>    
+      {{/each}} 
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+<hr>
+
+<footer>
+  icons by
+  <a target="_blank" href="https://icons8.com">Icons8</a>"
+</footer>

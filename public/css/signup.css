@@ -1,0 +1,67 @@
+body {
+    background-image: url("https://www.dropbox.com/s/250icc6dc7udhzp/miami_car_show_170.jpg?raw=1");
+    /* Background image is centered vertically and horizontally at all times */ 
+    background-position: center center; 
+    /* Background image doesn’t tile */ 
+    background-repeat: no-repeat; 
+    /* Background image is fixed in the viewport so that it doesn’t move when
+     the content’s height is greater than the image’s height */ 
+    background-attachment: fixed; 
+    /* This is what makes the background image rescale based on the container’s size */ 
+    background-size: cover;     
+    /* Set a background color that will be displayed while the background image is loading */ 
+    background-color: #464646; 
+}
+
+.form_cnt {
+    background-color: lightblue;
+    width:50%;
+    margin-top: 20%;
+    min-width: 400px;
+    max-width: 50%;
+    margin-right : auto;
+    margin-left  : auto;
+    border-radius: 5px;
+    padding : 10px;
+    /*display : none;   */
+}
+
+.firstname {
+    border-radius: 5px;
+    margin-bottom : 10px;
+}
+.lastname {
+    border-radius: 5px;
+    margin-bottom : 10px;
+}
+
+.email {
+    border-radius: 5px;
+    margin-bottom : 10px;
+}
+
+.pinpad_msg {
+    background-color: aliceblue;
+    opacity: 0.5;
+    color:black;
+}
+
+.box {    
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+.brand {
+    text-align: right;
+}
+
+div h2 {
+    text-align: center;
+    margin : 10px
+}
+

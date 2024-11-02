@@ -1,0 +1,49 @@
+<script src="/scripts/login.js"></script>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="" style="display:flex; justify-content:center;margin-top:10%;">                  
+            <img src="/images/rabbit.jpg" alt="VertexWeb Dev Logo" width="120px" height="120px">          
+        </div>
+        
+          <div class="" style="display:flex; justify-content:center;margin-top:10%;">
+          <form style="width: 23rem;" method="POST" name="Form" onsubmit="return validateForm()" action="/subscribe">
+
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign Up</h3>
+
+            <div class="form-outline mb-4">
+              <input type="email" name="email" id="emailInput" class="form-control form-control-lg" />
+              <label class="form-label" for="emailInput">Email address</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" name="password" id="passwordInput" class="form-control form-control-lg" />
+              <label class="form-label" for="passwordInput">Password</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" id="chkPasswordInput" class="form-control form-control-lg" />
+              <label class="form-label" for="chkPasswordInput">Repeat Password</label>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-info btn-lg btn-block" type="submit">Suscribe</button>              
+            </div>
+
+            <!--p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p-->
+            <!--p>Don't have an account? <a href="#!" class="link-info">Register here</a></p-->
+
+          </form>
+
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>

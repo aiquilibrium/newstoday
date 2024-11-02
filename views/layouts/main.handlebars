@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>News Today</title>
+                   
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     
+        <link rel="stylesheet" href="/css/login.css"  type="text/css">
+
+        <!-- Font Awesome -->
+        <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        rel="stylesheet"
+        />
+        <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css"
+        rel="stylesheet"
+        />
+        <meta name="theme-color" content="#7952b3">         
+    </head>
+  
+    <body>
+        <main>
+            <!--v1 5/28/2023 -->
+            {{#if message}}
+                <div style="text: align:center" class="alert alert-{{message.type}}">
+                <button type="button" name="close" data-dismiss="alert">&times;</button>
+                <strong>{{message.intro}}</strong> {{message.message}}
+                </div>
+            {{/if}}
+
+            {{#if messages.error}}
+                <div class="alert alert-danger">
+                    {{messages.error}}
+                </div>
+            {{/if}}
+                     
+            {{{body}}}
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- MDB -->
+        <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"
+        ></script>
+    </body>
+
+</html>
