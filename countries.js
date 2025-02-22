@@ -83,7 +83,7 @@ const countryData = {
     return countryNames[countryCode] || 'Unknown';
   },
   getCountryList : function (){
-    return test_two_letter_country;
+    return two_letter_country;
   }
  
 };

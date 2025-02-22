@@ -103,20 +103,20 @@ let mediaStackResponse;
 
 //TODO:
 // delete this when tested
-var mediastack = require('./mediastack');
+//var mediastack = require('./mediastack');
 
 
-app.get("/", (req, res) => {
+app.get("/news-today/login", (req, res) => {
   res.render("login");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
+//app.get("/news-today/", (req, res) => {
+//  res.render("login");
+//});
 
-app.post("/login", (req, res) => {});
+app.post("/news-today/login", (req, res) => {});
 
-app.get("/subscribe", (request, response) => {
+app.get("/news-today/subscribe", (request, response) => {
   response.render("subscribe");
 });
 
@@ -157,7 +157,7 @@ app.post("/subscribe", (request, response) => {
 */
 
 //optimized
-app.post("/subscribe", (request, response) => {
+app.post("/news-today/subscribe", (request, response) => {
     const { email, password } = request.body;
     const query_findByEmail = 'SELECT EXISTS (SELECT 1 FROM users WHERE email = $1) AS email_exists';
     const query_insertUser = 'INSERT INTO users (email, password) VALUES ($1, $2)';
@@ -188,14 +188,14 @@ app.post("/subscribe", (request, response) => {
     });
   });
 
-  app.get("/customize", (request, response) => {
+  app.get("/news-today/customize", (request, response) => {
     response.render("customize", {categories:categories, countries:countries, languages:languages});
   });  
   
     //TODO: to be implemented
   //https://mediastack.com/documentation
   //
-  app.get("/mediastack", (req, response)=>{
+  app.get("/news-today/mediastack", (req, response)=>{
     //const mediastack_response =  mediastack.response;
     //let j = JSON.parse(mediastack_response);  
     //console.log(`${currentTime()} IP ${request.socket.remoteAddress} get topheadlines`);
@@ -213,7 +213,7 @@ app.post("/subscribe", (request, response) => {
     }
     }catch (err){
       console.log (`${currentTime()} Error while rendering mediastack page.`);
-      console.log(err);
+      console.log (err);
       response.render ("page505");
     }
     
@@ -253,7 +253,7 @@ function currentTime (){
 
   
   async function fetchFromMediaStack() {
-    console.log(`${currentTime()} [fetchFromMediaStack] Fetching the news from MediaStack...`);
+    console.log(`${currentTime()} [fetchFromMediaStack] Getting news from MediaStack...`);
     const resource = 'http://api.mediastack.com/v1/news?access_key=' + MEDIASTACK_API_KEY;
     try {
       const response = await fetch(resource);
@@ -294,7 +294,7 @@ function currentTime (){
       });
   }
     
-  app.get("/topheadlines", (req, response) => {    
+  app.get("/news-today/", (req, response) => {    
     //console.log(`${currentTime()} IP ${request.socket.remoteAddress} get topheadlines`);
     console.log(`${currentTime()} IP ${req.headers['x-forwarded-for'] || req.connection.remoteAddress} get topheadlines`);
 
@@ -313,7 +313,7 @@ function currentTime (){
     }
   });
   
-app.get ("/505", (request, response) => {
+app.get ("/news-today/505", (request, response) => {
   response.render("page505", {remainingTime:remainingTime});    
 })
 
